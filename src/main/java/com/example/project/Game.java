@@ -16,9 +16,28 @@ public class Game{
     }
 
     public static void play(){ //simulate card playing
-    
+        Deck d = new Deck();
+        d.shuffleDeck();
+        Player p1 = new Player();
+        Player p2 = new Player();
+        ArrayList<Card> cc = new ArrayList<Card>();
+        cc.add(d.drawCard());
+        cc.add(d.drawCard());
+        cc.add(d.drawCard());
+        p1.addCard(d.drawCard());
+        p1.addCard(d.drawCard());
+        p2.addCard(d.drawCard());
+        p2.addCard(d.drawCard());
+        System.out.println(cc);
+        System.out.println(p1.playHand(cc));
+        System.out.println(p1.getHand());
+        System.out.println(p2.playHand(cc));
+        System.out.println(p2.getHand());
+        System.out.println(determineWinner(p1, p2, p1.playHand(cc), p2.playHand(cc), cc));;
     }
-        
+    public static void main(String[] args) {
+        play();
+    }
         
 
 }

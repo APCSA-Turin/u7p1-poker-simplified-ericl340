@@ -18,6 +18,9 @@ public class Player{
     public void addCard(Card c){
         hand.add(c);
     }
+    public void delCards() {
+        hand = new ArrayList<>();
+    }
 
     public String playHand(ArrayList<Card> communityCards){
         String res = "";
@@ -143,23 +146,4 @@ public class Player{
     public String toString(){
         return hand.toString();
     }
-
-public static void main(String[] args) {
-    
-    Player player = new Player();
-        player.addCard(new Card("10", "♠"));
-        player.addCard(new Card("J", "♠"));
-        
-        // Community Cards
-        ArrayList<Card> communityCards = new ArrayList<>();
-        communityCards.add(new Card("3", "♠"));
-        communityCards.add(new Card("7", "♠"));
-        communityCards.add(new Card("A", "♠"));
-        
-        player.playHand(communityCards);
-        String handResult = player.playHand(communityCards);
-        System.out.println(handResult);
-}
-
-
 }

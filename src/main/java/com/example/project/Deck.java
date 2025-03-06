@@ -6,7 +6,6 @@ public class Deck{
     private ArrayList<Card> cards;
 
     public Deck(){
-        cards = new ArrayList<>();
         initializeDeck();
         shuffleDeck();
     }
@@ -15,7 +14,8 @@ public class Deck{
         return cards;
     }
 
-    public  void initializeDeck(){ //hint.. use the utility class
+    public void initializeDeck(){ //hint.. use the utility class
+        cards = new ArrayList<>();
         String[] r = Utility.getRanks();
         String[] s = Utility.getSuits();
         for (int i = 0; i < r.length; i++) {

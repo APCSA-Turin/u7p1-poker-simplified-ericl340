@@ -10,9 +10,23 @@ public class Game{
         int p1c2 = Utility.getRankValue(p1.getHand().get(1).getRank());
         int p2c1 = Utility.getRankValue(p2.getHand().get(0).getRank());
         int p2c2 = Utility.getRankValue(p2.getHand().get(1).getRank());
-        p1h += p1c1 > p1c2 ? p1c1 : p1c2;
-        p2h += p2c1 > p2c2 ? p2c1 : p2c2;
-        return p1h > p2h ? "Player 1 wins!" : p2h == p1h ? "Tie!" : "Player 2 wins!";
+        if (p1c1 > p1c2) {
+            p1h += p1c1;
+        }else{
+            p1h += p1c2;
+        }
+        if (p2c1 > p2c2) {
+            p2h += p2c1;
+        }else{
+            p2h += p2c2;
+        }
+        if (p1h > p2h) {
+            return "Player 1 wins!";
+        }else if (p2h == p1h) {
+            return "Tie!";
+        }else{
+            return "Player 2 wins!";
+        }
     }
 
     public static void play(){ //simulate card playing

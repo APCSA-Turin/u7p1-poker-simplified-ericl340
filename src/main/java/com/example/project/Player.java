@@ -104,7 +104,11 @@ public class Player{
                         break;
                     }
                 }
-                res = n ? "Nothing" : "High Card";
+                if (n) {
+                    res = "Nothing";
+                }else{
+                    res = "High Card";
+                }
             }
         }
         return res;
